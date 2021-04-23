@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th><th>Créateur</th>  <th>Nom</th> <th>Date de création</th> </tr>
+        </thead>
+          <tbody *ngFor="let ressource of ressources">
+            <tr>
+              <td>{{ressource.idRessource}}</td>
+              <td>{{ressource.nomCreateur}}</td>
+              <td>{{ressource.nomRessource}}</td>
+              <td>{{ressource.dateCreation | date : 'dd/MM/yyyy'}}</td>
+              <td><a *ngIf="authService.isCitoyen()" class="btn btn-primary" [routerLink]="['/updateRessource',ressource.idRessource]">Modifier</a></td>
+              <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerRessource(ressource)">Supprimer</a></td>
+            </tr>
+            <br>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

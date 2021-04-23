@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card-body">
+    <div class="col-md-6 ml-10">
+      <div><h1 class="text-center">Authentification</h1><br>
+        <p>Veuillez remplir les informations ci-dessous.</p>
+        <hr>
+        <div class="alert alert-danger" *ngIf="erreur==1">
+          <strong>Login ou Mot de passe Incorrect</strong>
+        </div>
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" class="form-control" [(ngModel)]="user.username">
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" class="form-control" [(ngModel)]="user.password">
+        <br>
+        <div class="text-center">
+          <!--<button type="button" class="btn btn-primary">S'enregistrer</button>-->
+          <button class="btn btn-success" (click)="onLogIn()">Se connecter</button>
+          <!--<button class="btn btn-danger">Se déconnecter</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
